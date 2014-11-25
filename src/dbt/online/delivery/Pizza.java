@@ -1,6 +1,6 @@
-package OnlineLieferservice;
+package dbt.online.delivery;
 
-public class Pizza {
+public class Pizza extends Product{
 
 	public Pizza() {
 		// TODO Auto-generated constructor stub

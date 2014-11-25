@@ -1,8 +1,8 @@
-package OnlineLieferservice;
+package dbt.online.delivery;
 
-public class OnlineLieferservice {
+public class OnlineDelivery {
 
-	public OnlineLieferservice() {
+	public OnlineDelivery() {
 		// TODO Auto-generated constructor stub
 	}
 

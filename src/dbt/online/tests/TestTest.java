@@ -1,7 +1,7 @@
 /**
  * 
  */
-package tests;
+package dbt.online.tests;
 
 import static org.junit.Assert.*;
 
