@@ -4,8 +4,8 @@ public class Ingredient extends Product {
 
 	private int INGREDIENT_ID = 0;
 
-	public Ingredient() {
-		super();
+	public Ingredient(float price, String name) {
+		super(price, name);
 	}
 
 	public int getINGREDIENT_ID() {

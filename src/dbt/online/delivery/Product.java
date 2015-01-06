@@ -6,8 +6,9 @@ public abstract class Product {
 	private String name;
 	
 	
-	public Product() {
-		// TODO Auto-generated constructor stub
+	public Product(float gprice, String gname) {
+		this.price=gprice;
+		this.name=gname;
 	}
 
 

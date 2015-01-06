@@ -4,8 +4,8 @@ public class Supplement extends Product {
 
 	private int SUPPLEMENT_ID=0;
 	
-	public Supplement() {
-		super();
+	public Supplement(float price, String name) {
+		super(price, name);
 	}
 
 	public int getSUPPLEMENT_ID() {

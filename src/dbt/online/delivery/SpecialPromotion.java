@@ -10,8 +10,8 @@ public class SpecialPromotion extends Product{
 	private Set<Supplement> supplements = new HashSet<Supplement>();
 	private Set<Pizza> pizzas = new HashSet<Pizza>();
 	
-	public SpecialPromotion() {
-		// TODO Auto-generated constructor stub
+	public SpecialPromotion(float price, String name) {
+		super(price, name);
 	}
 
 	/**

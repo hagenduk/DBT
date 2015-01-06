@@ -9,8 +9,8 @@ public class Pizza extends Product{
 	private int size;
 	private Set<Ingredient> ingredients = new HashSet<Ingredient>();
 	
-	public Pizza() {
-		super();
+	public Pizza(float price, String name) {
+		super(price, name);
 	}
 
 	/**
