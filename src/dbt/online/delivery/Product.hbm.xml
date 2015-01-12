@@ -10,10 +10,11 @@
 		<property name="name" type="string" not-null="true"/>
 		<property name="price" type="float" not-null="true"/>
 		
-		<many-to-many
-			name="ingredients"
-			column="INGREDIENT_ID"
-			class="dbt.online.delivery.Ingredient"
-			not-null="false"/>
+		<set name="ingredients" 
+			inverse="true"
+			cascade="save-update, delete, delete-orphan">			
+			<key column="INGREDIENT_ID"/>
+			<many-to-many class="dbt.online.delivery.Ingredient"/>
+		</set>
   </class>
 </hibernate-mapping>

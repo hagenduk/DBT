@@ -1,12 +1,13 @@
 package dbt.online.delivery;
 
-public class Ingredient{
+public class Ingredient extends DBCommunication<Ingredient>{
 
 	private int INGREDIENT_ID = 0;
 	private float price;
 	private String name;
 
 	public Ingredient(float price, String name) {
+		super();
 		this.price = price;
 		this.name = name;
 	}
@@ -35,4 +36,7 @@ public class Ingredient{
 		INGREDIENT_ID = iNGREDIENT_ID;
 	}
 
+	public String toString(){		
+		return "Ingredient-" + this.INGREDIENT_ID + "[" + name  + "]";
+	}
 }

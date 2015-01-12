@@ -3,7 +3,7 @@ package dbt.online.delivery;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Product {
+public class Product extends DBCommunication<Product>{
 
 	private int PRODUCT_ID = 0;
 	private float price;
@@ -11,8 +11,20 @@ public class Product {
 	private Set<Ingredient> ingredients = new HashSet<Ingredient>();
 		
 	public Product(float gprice, String gname) {
+		super();
 		this.price=gprice;
 		this.name=gname;
+		this.create(this);
+	}
+	
+	public void addIngredient(Ingredient ing){
+		ingredients.add(ing);
+		this.price = this.price + ing.getPrice();
+	}
+	
+	public void removeIngredient(Ingredient ing){
+		ingredients.remove(ing);
+		this.price = this.price - ing.getPrice();
 	}
 
 	public int getPRODUCT_ID() {
@@ -31,21 +43,11 @@ public class Product {
 		this.ingredients = ingredients;
 	}
 	
-	private float getIngredientsPrice(){
-		float ingPrice = 0;
-		if (!this.ingredients.isEmpty()){
-			for (Ingredient ing : this.ingredients){
-				ingPrice = ingPrice + ing.getPrice();
-			}
-		}
-		return ingPrice;
-	}
-
 	/**
 	 * @return the price
 	 */
 	public float getPrice() {		
-		return (this.ingredients.isEmpty()) ? this.price : (this.price + getIngredientsPrice());
+		return this.price;
 	}
 
 
@@ -72,4 +74,11 @@ public class Product {
 		this.name = name;
 	}
 
+	public String toString(){
+		String returnString = "Product-" + this.PRODUCT_ID + "[" ;
+		for(Ingredient ing : ingredients){
+			returnString += ing.toString();
+		}
+		return returnString + "]";
+	}
 }

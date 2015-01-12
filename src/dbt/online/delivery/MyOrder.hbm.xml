@@ -7,13 +7,17 @@
 			<generator class="native"></generator>
 		</id>
 
-		<property name="date" type="date" not-null="true" />
-		<property name="totalprice" type="float" not-null="true" />
+		<property name="orderDate" type="string"/>
+		<property name="totalPrice" type="float" not-null="true" />
 
-		<many-to-one name="customer" column="CUSTOMER_ID"
-			class="dbt.online.delivery.Customer" not-null="true" />
-
-		<many-to-many name="menus" column="MENU_ID"
-			class="dbt.online.delivery.Menu" not-null="true" />
+		<many-to-one name="customer" column="Customer"
+			class="dbt.online.delivery.Customer" />
+		
+		<set name="menus" 
+			inverse="true"
+			cascade="save-update, delete, delete-orphan">			
+			<key column="MENU_ID"/>
+			<many-to-many class="dbt.online.delivery.Menu"/>
+		</set>		
 	</class>
 </hibernate-mapping>

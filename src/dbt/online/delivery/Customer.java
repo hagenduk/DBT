@@ -17,19 +17,28 @@ public class Customer {
 		this.email=gemail;
 	}
 
-	/**
-	 * @return the id
-	 */
-	public int getId() {
+	public int getCUSTOMER_ID() {
 		return CUSTOMER_ID;
 	}
 
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(int id) {
-		this.CUSTOMER_ID = id;
+
+	public void setCUSTOMER_ID(int cUSTOMER_ID) {
+		CUSTOMER_ID = cUSTOMER_ID;
 	}
+
+
+
+	public Set<MyOrder> getMyOrders() {
+		return myOrders;
+	}
+
+
+
+	public void setMyOrders(Set<MyOrder> myOrders) {
+		this.myOrders = myOrders;
+	}
+
+
 
 	/**
 	 * @return the name
@@ -72,19 +81,4 @@ public class Customer {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	/**
-	 * @return the myOrders
-	 */
-	public Set<MyOrder> getOrders() {
-		return myOrders;
-	}
-
-	/**
-	 * @param myOrders the myOrders to set
-	 */
-	public void setOrders(Set<MyOrder> myOrders) {
-		this.myOrders = myOrders;
-	}
-
 }
