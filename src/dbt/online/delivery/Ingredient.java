@@ -1,11 +1,30 @@
 package dbt.online.delivery;
 
-public class Ingredient extends Product {
+public class Ingredient{
 
 	private int INGREDIENT_ID = 0;
+	private float price;
+	private String name;
 
 	public Ingredient(float price, String name) {
-		super(price, name);
+		this.price = price;
+		this.name = name;
+	}
+
+	public float getPrice() {
+		return price;
+	}
+
+	public void setPrice(float price) {
+		this.price = price;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public int getINGREDIENT_ID() {
