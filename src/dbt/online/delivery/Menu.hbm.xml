@@ -9,6 +9,7 @@
 		
 		<property name="name" type="string" not-null="true"/>
 		<property name="discount" type="int" not-null="true"/>
+		<property name="prize" type="float" not-null="true"/>
 		
 		<many-to-many
 			name="products"
