@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="dbt.online.delivery">
+  <class name="dbt.online.delivery.Menu" table="MENU" >
+    	<id name="MENU_ID" type="int">
+			<meta attribute="scope-set">protected</meta>
+			<generator class="native"></generator>
+		</id>
+		
+		<property name="name" type="string" not-null="true"/>
+		<property name="discount" type="int" not-null="true"/>
+		<property name="prize" type="float" not-null="true"/>
+		
+		<many-to-many
+			name="products"
+			column="PRODUCT_ID"
+			class="dbt.online.delivery.Product"
+			not-null="false"/>
+  </class>
+</hibernate-mapping>
