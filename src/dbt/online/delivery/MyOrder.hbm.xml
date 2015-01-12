@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
-<hibernate-mapping package="oodb.example">
-  <class name="dbt.online.delivery.CatalogItem" table="MYORDER" >
-    	<id name="ORDER_ID" type="int">
+<hibernate-mapping package="dbt.online.delivery.">
+	<class name="dbt.online.delivery.MyOrder" table="MYORDER">
+		<id name="MYORDER_ID" type="int">
 			<meta attribute="scope-set">protected</meta>
 			<generator class="native"></generator>
 		</id>
-		
-		<property name="date" type="date" not-null="true"/>
-		<property name="totalprice" type="float" not-null="true"/>
-		
-		<many-to-one
-			name="CUSTOMER_ID"
-			column="CUSTOMER_ID"
-			class="dbt.online.delivery.Customer"
-			not-null="true"/>
-  </class>
+
+		<property name="date" type="date" not-null="true" />
+		<property name="totalprice" type="float" not-null="true" />
+
+		<many-to-one name="customer" column="CUSTOMER_ID"
+			class="dbt.online.delivery.Customer" not-null="true" />
+
+		<many-to-many name="menus" column="MENU_ID"
+			class="dbt.online.delivery.Menu" not-null="true" />
+	</class>
 </hibernate-mapping>
