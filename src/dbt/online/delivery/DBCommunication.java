@@ -19,6 +19,19 @@ public class DBCommunication<T> {
 				tx.rollback();
 		}
 	}
+	void update(T c) {
+		Transaction tx = null;
+		Session session = InitSessionFactory.getInstance().getCurrentSession();
+		try {
+			tx = session.beginTransaction();
+			session.update(c);
+			tx.commit();
+		} catch (HibernateException e) {
+			e.printStackTrace();
+			if (tx != null && tx.isActive())
+				tx.rollback();
+		}
+	}
 	
     void delete(T c) {
 		Transaction tx = null;

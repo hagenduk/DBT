@@ -10,6 +10,7 @@ public class Ingredient extends DBCommunication<Ingredient>{
 		super();
 		this.price = price;
 		this.name = name;
+		this.create(this);
 	}
 
 	public float getPrice() {
@@ -37,6 +38,6 @@ public class Ingredient extends DBCommunication<Ingredient>{
 	}
 
 	public String toString(){		
-		return "Ingredient-" + this.INGREDIENT_ID + "[" + name  + "]";
+		return "\t\t\tIngredient-" + this.INGREDIENT_ID + "[" + name  + "]\n";
 	}
 }

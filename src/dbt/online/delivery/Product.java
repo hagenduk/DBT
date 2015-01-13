@@ -75,10 +75,10 @@ public class Product extends DBCommunication<Product>{
 	}
 
 	public String toString(){
-		String returnString = "Product-" + this.PRODUCT_ID + "[" ;
+		String returnString = "\t\tProduct-" + this.PRODUCT_ID + "->" + this.name + "\n\t\t[\n" ;
 		for(Ingredient ing : ingredients){
 			returnString += ing.toString();
 		}
-		return returnString + "]";
+		return returnString + "\n\t\t]\n";
 	}
 }

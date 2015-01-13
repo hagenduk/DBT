@@ -10,14 +10,20 @@
 		<property name="orderDate" type="string"/>
 		<property name="totalPrice" type="float" not-null="true" />
 
-		<many-to-one name="customer" column="Customer"
+		<many-to-one name="customer" column="CUSTOMER_ID"
 			class="dbt.online.delivery.Customer" />
 		
+		<!--
 		<set name="menus" 
 			inverse="true"
 			cascade="save-update, delete, delete-orphan">			
 			<key column="MENU_ID"/>
 			<many-to-many class="dbt.online.delivery.Menu"/>
-		</set>		
+		</set>
+		-->
+		<set name="menus" table="map_myorder_menu" cascade="save-update, delete, delete-orphan">			
+			<key column="MYORDER_ID"/>
+			<many-to-many class="dbt.online.delivery.Menu" column="MENU_ID" />
+		</set>
 	</class>
 </hibernate-mapping>

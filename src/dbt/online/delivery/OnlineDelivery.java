@@ -30,16 +30,23 @@ public class OnlineDelivery {
 		Product s2 = new Product(2, "Cola 0,75l");
 		Product s3 = new Product(4, "Pizza SuperMario");
 		s3.addIngredient(i1);
-		s3.addIngredient(i4);		
+		s3.addIngredient(i4);
+		Product s4 = new Product(5, "Pizza Annanas");
+		s4.addIngredient(i4);
+		s4.addIngredient(i5);
 		
 		//add Menus
 		Menu sp1 = new Menu("Pizza Supermario Menu", 10);
 		sp1.addProduct(s3);
 		sp1.addProduct(s2);
+		Menu sp2 = new Menu("Pizza: Annanas", 0);
+		sp2.addProduct(s4);
 		
 		//add order
 		MyOrder myOrder = new MyOrder(customer);
-		myOrder.addMenu(sp1);		
+		myOrder.getMenus().add(sp1);
+		myOrder.addMenu(sp2);
+		myOrder.update(myOrder);
 		
 		System.out.print(myOrder.toString());
 	}

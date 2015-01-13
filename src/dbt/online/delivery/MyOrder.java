@@ -53,8 +53,7 @@ public class MyOrder extends DBCommunication<MyOrder>{
 		return menuPrice;
 	}
 	
-	public float getTotalPrice() {
-		if (totalPrice == 0) setTotalPrice(65);
+	public float getTotalPrice() {	
 		return totalPrice;
 	}
 	public void setTotalPrice(float totalPrice) {
@@ -74,10 +73,10 @@ public class MyOrder extends DBCommunication<MyOrder>{
 	}
 
 	public String toString(){
-		String returnString = "Order-" + this.MYORDER_ID + "[" ;
+		String returnString = "Order-" + this.MYORDER_ID + "\n[\n" ;
 		for(Menu menu : menus){
 			returnString += menu.toString();
 		}
-		return returnString + "]";
+		return returnString + "\n]";
 	}	
 }
