@@ -73,7 +73,7 @@ public class MyOrder extends DBCommunication<MyOrder>{
 	}
 
 	public String toString(){
-		String returnString = "Order-" + this.MYORDER_ID + "->" + this.customer.toString() + "->Date:" + this.orderDate.toString() + "[\n" ;
+		String returnString = "Order-" + this.MYORDER_ID + "->" + this.customer.toString() + "->Date:" + this.orderDate.toString()+ "->Price:" + this.totalPrice + "[\n" ;
 		for(Menu menu : menus){
 			returnString += menu.toString();
 		}
