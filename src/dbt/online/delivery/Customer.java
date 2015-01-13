@@ -3,7 +3,7 @@ package dbt.online.delivery;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Customer {
+public class Customer extends DBCommunication<Customer>{
 
 	private int CUSTOMER_ID = 0;
 	private String name;
@@ -12,9 +12,11 @@ public class Customer {
 	private Set<MyOrder> myOrders = new HashSet<MyOrder>();
 	
 	public Customer(String gname, String gaddress, String gemail) {
+		super();
 		this.name=gname;
 		this.address=gaddress;
 		this.email=gemail;
+		this.create(this);
 	}
 
 	public int getCUSTOMER_ID() {

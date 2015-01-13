@@ -22,10 +22,10 @@
 		<property name="hibernate.show_sql">true</property>
 		<!-- this will create the database tables for us -->
 		<property name="hibernate.hbm2ddl.auto">create</property>
-		<mapping resource="dbt.online.delivery/Customer.hbm.xml" />
-		<mapping resource="dbt.online.delivery/Ingredient.hbm.xml" />
-		<mapping resource="dbt.online.delivery/MyOrder.hbm.xml" />
-		<mapping resource="dbt.online.delivery/Product.hbm.xml" />
-		<mapping resource="dbt.online.delivery/Menu.hbm.xml" />
+		<mapping resource="dbt/online/delivery/Customer.hbm.xml" />
+		<mapping resource="dbt/online/delivery/Ingredient.hbm.xml" />
+		<mapping resource="dbt/online/delivery/MyOrder.hbm.xml" />
+		<mapping resource="dbt/online/delivery/Product.hbm.xml" />
+		<mapping resource="dbt/online/delivery/Menu.hbm.xml" />
 	</session-factory>
 </hibernate-configuration>
