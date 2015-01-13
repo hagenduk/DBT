@@ -83,4 +83,8 @@ public class Customer extends DBCommunication<Customer>{
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	public String toString(){		
+		return "Customer-" + this.CUSTOMER_ID+ "[" + this.name  + "]";
+	}
 }

@@ -11,11 +11,19 @@
 		<property name="discount" type="int" not-null="true"/>
 		<property name="price" type="float" not-null="true"/>
 		
+		<!--
 		<set name="products" 
 			inverse="true"
 			cascade="save-update, delete, delete-orphan">			
 			<key column="PRODUCT_ID"/>
 			<many-to-many class="dbt.online.delivery.Product"/>
 		</set>	
+		-->
+		
+		<set name="products" table="map_menu_product" cascade="save-update, delete, delete-orphan">			
+			<key column="MENU_ID"/>
+			<many-to-many class="dbt.online.delivery.Product" column="PRODUCT_ID" />
+		</set>
+		
   </class>
 </hibernate-mapping>

@@ -84,10 +84,10 @@ public class Menu extends DBCommunication<Menu>{
 	}
 	
 	public String toString(){
-		String returnString = "\tMenu-" + this.MENU_ID + "->" + this.name + "\n\t[\n" ;
+		String returnString = "\tMenu-" + this.MENU_ID + "->Name:" + this.name + "->Discount:" + this.discount + "[\n" ;
 		for(Product prod : products){
 			returnString += prod.toString();
 		}
-		return returnString + "\n\t]";
+		return returnString + "\t]\n";
 	}
 }

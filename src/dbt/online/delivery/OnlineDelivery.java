@@ -36,19 +36,25 @@ public class OnlineDelivery {
 		s4.addIngredient(i5);
 		
 		//add Menus
-		Menu sp1 = new Menu("Pizza Supermario Menu", 10);
+		Menu sp1 = new Menu("Menu Supermario", 10);
 		sp1.addProduct(s3);
 		sp1.addProduct(s2);
-		Menu sp2 = new Menu("Pizza: Annanas", 0);
+		Menu sp2 = new Menu("Pizza Annanas", 0);
 		sp2.addProduct(s4);
 		
 		//add order
 		MyOrder myOrder = new MyOrder(customer);
-		myOrder.getMenus().add(sp1);
+		myOrder.addMenu(sp1);
 		myOrder.addMenu(sp2);
+		//Doppeltes Hinzufuegen funktioniert nicht
 		myOrder.update(myOrder);
 		
+		MyOrder myOrder2 = new MyOrder(customer);
+		myOrder2.addMenu(sp2);
+		myOrder2.update(myOrder2);
+		
 		System.out.print(myOrder.toString());
+		System.out.print(myOrder2.toString());
 	}
 		
 }

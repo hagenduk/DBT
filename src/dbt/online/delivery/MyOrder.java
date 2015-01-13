@@ -73,10 +73,10 @@ public class MyOrder extends DBCommunication<MyOrder>{
 	}
 
 	public String toString(){
-		String returnString = "Order-" + this.MYORDER_ID + "\n[\n" ;
+		String returnString = "Order-" + this.MYORDER_ID + "->" + this.customer.toString() + "->Date:" + this.orderDate.toString() + "[\n" ;
 		for(Menu menu : menus){
 			returnString += menu.toString();
 		}
-		return returnString + "\n]";
+		return returnString + "]\n";
 	}	
 }
