@@ -6,11 +6,19 @@ import org.hibernate.Transaction;
 
 public class DBCommunication<T> {
 		
-	void create(T c) {
+	void execute(T c, METHOD method) {
 		Transaction tx = null;
 		Session session = InitSessionFactory.getInstance().getCurrentSession();
 		try {
 			tx = session.beginTransaction();
+			switch(method){
+				case CREATE: session.save(c);
+					break;
+				case DELETE: session.delete(c);
+					break;
+				case UPDATE: session.update(c);
+					break;	
+			}
 			session.save(c);
 			tx.commit();
 		} catch (HibernateException e) {
@@ -18,32 +26,11 @@ public class DBCommunication<T> {
 			if (tx != null && tx.isActive())
 				tx.rollback();
 		}
-	}
-	void update(T c) {
-		Transaction tx = null;
-		Session session = InitSessionFactory.getInstance().getCurrentSession();
-		try {
-			tx = session.beginTransaction();
-			session.update(c);
-			tx.commit();
-		} catch (HibernateException e) {
-			e.printStackTrace();
-			if (tx != null && tx.isActive())
-				tx.rollback();
-		}
-	}
-	
-    void delete(T c) {
-		Transaction tx = null;
-		Session session = InitSessionFactory.getInstance().getCurrentSession();
-		try {
-			tx = session.beginTransaction();
-			session.delete(c);
-			tx.commit();
-		} catch (HibernateException e) {
-			e.printStackTrace();
-			if (tx != null && tx.isActive())
-				tx.rollback();
-		}
-	}
+	}	
+    
+    public enum METHOD{
+    	CREATE,
+    	UPDATE,
+    	DELETE
+    }
 }

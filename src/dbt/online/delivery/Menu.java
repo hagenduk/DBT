@@ -15,17 +15,19 @@ public class Menu extends DBCommunication<Menu>{
 		super();
 		this.name = name;		
 		this.discount = discount;
-		this.create(this);
+		this.execute(this, METHOD.CREATE);
 	}
 	
 	public void addProduct(Product prod){
 		products.add(prod);
 		this.price = this.price + prod.getPrice() * (100-discount)/100;
+		this.execute(this, METHOD.UPDATE);
 	}
 	
 	public void remiverProduct(Product prod){
 		products.remove(prod);
 		this.price = this.price - prod.getPrice();
+		this.execute(this, METHOD.DELETE);
 	}
 
 	

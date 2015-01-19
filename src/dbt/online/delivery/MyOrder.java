@@ -17,17 +17,19 @@ public class MyOrder extends DBCommunication<MyOrder>{
 		super();
 		orderDate = (new Timestamp(System.currentTimeMillis())).toString();
 		this.customer = customer;
-		this.create(this);
+		this.execute(this, METHOD.CREATE);
 	}
 	
 	public void addMenu(Menu menu){
 		menus.add(menu);
 		this.totalPrice = this.totalPrice + menu.getPrice();
+		this.execute(this, METHOD.UPDATE);
 	}
 	
 	public void remiveMenu(Menu menu){
 		menus.remove(menu);
 		this.totalPrice = this.totalPrice - menu.getPrice();
+		this.execute(this, METHOD.DELETE);
 	}
 	
 	public int getMYORDER_ID() {

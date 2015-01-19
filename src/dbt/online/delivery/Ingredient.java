@@ -10,7 +10,7 @@ public class Ingredient extends DBCommunication<Ingredient>{
 		super();
 		this.price = price;
 		this.name = name;
-		this.create(this);
+		this.execute(this, METHOD.CREATE);
 	}
 
 	public float getPrice() {

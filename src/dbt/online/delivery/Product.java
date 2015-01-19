@@ -14,17 +14,19 @@ public class Product extends DBCommunication<Product>{
 		super();
 		this.price=gprice;
 		this.name=gname;
-		this.create(this);
+		this.execute(this, METHOD.CREATE);
 	}
 	
 	public void addIngredient(Ingredient ing){
 		ingredients.add(ing);
 		this.price = this.price + ing.getPrice();
+		this.execute(this, METHOD.UPDATE);
 	}
 	
 	public void removeIngredient(Ingredient ing){
 		ingredients.remove(ing);
 		this.price = this.price - ing.getPrice();
+		this.execute(this, METHOD.DELETE);
 	}
 
 	public int getPRODUCT_ID() {

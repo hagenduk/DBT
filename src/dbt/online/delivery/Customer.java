@@ -16,7 +16,7 @@ public class Customer extends DBCommunication<Customer>{
 		this.name=gname;
 		this.address=gaddress;
 		this.email=gemail;
-		this.create(this);
+		this.execute(this, METHOD.CREATE);
 	}
 
 	public int getCUSTOMER_ID() {

@@ -16,8 +16,8 @@ public class OnlineDelivery {
 	@SuppressWarnings("unused")
 	public void firstTest(){
 		
-		Customer customer1 = new Customer("Hans Müller", "Hamburg", "robot@gmail.com");
-		Customer customer2 = new Customer("Herbert Schäfer", "Hamburg", "robot@gmail.com");
+		Customer customer1 = new Customer("Hans Mï¿½ller", "Hamburg", "robot@gmail.com");
+		Customer customer2 = new Customer("Herbert Schï¿½fer", "Hamburg", "robot@gmail.com");
 		Customer customer3 = new Customer("Gregor Bauer", "Hannover", "robot@gmail.com");
 		Customer customer4 = new Customer("Stefanie Meier", "Hannover", "robot@gmail.com");
 		Customer customer5 = new Customer("Bernd Stromberg", "Hameln", "robot@gmail.com");
@@ -25,7 +25,7 @@ public class OnlineDelivery {
 		//add ingredients
 		Ingredient i1 = new Ingredient(1, "Pizzateig");
 		Ingredient i2 = new Ingredient(2, "Tomatensauce");
-		Ingredient i3 = new Ingredient(3, "Käse");
+		Ingredient i3 = new Ingredient(3, "Kï¿½se");
 		Ingredient i4 = new Ingredient(4, "Annanas");
 		Ingredient i5 = new Ingredient(5, "Schinken");
 		Ingredient i6 = new Ingredient(5, "Pilze");
@@ -67,10 +67,9 @@ public class OnlineDelivery {
 		sp5.addProduct(s4);
 		sp5.addProduct(s2);
 		
-		Menu sp6 = new Menu("Getränk Cola", 1);
-		sp6.addProduct(s2);
-		sp6.update(sp6);
-		Menu sp7 = new Menu("Getränk Sprite", 0);
+		Menu sp6 = new Menu("Getrï¿½nk Cola", 1);
+		sp6.addProduct(s2);		
+		Menu sp7 = new Menu("Getrï¿½nk Sprite", 0);
 		sp7.addProduct(s1);
 		
 		
@@ -79,18 +78,15 @@ public class OnlineDelivery {
 		myOrder1.addMenu(sp1);
 		myOrder1.addMenu(sp2);
 		myOrder1.addMenu(sp3);
-		myOrder1.addMenu(sp4);
-		myOrder1.update(myOrder1);
+		myOrder1.addMenu(sp4);		
 		
 		MyOrder myOrder2 = new MyOrder(customer2);
-		myOrder2.addMenu(sp2);
-		myOrder2.update(myOrder2);
+		myOrder2.addMenu(sp2);		
 		
 		MyOrder myOrder3 = new MyOrder(customer2);
 		myOrder3.addMenu(sp2);
 		myOrder3.addMenu(sp4);
-		myOrder3.addMenu(sp1);
-		myOrder3.update(myOrder3);
+		myOrder3.addMenu(sp1);		
 		
 		System.out.print(myOrder3.toString());
 		//System.out.print(myOrder2.toString());
