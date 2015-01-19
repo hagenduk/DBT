@@ -67,8 +67,9 @@ public class OnlineDelivery {
 		sp5.addProduct(s4);
 		sp5.addProduct(s2);
 		
-		Menu sp6 = new Menu("Getränk Cola", 0);
+		Menu sp6 = new Menu("Getränk Cola", 1);
 		sp6.addProduct(s2);
+		sp6.update(sp6);
 		Menu sp7 = new Menu("Getränk Sprite", 0);
 		sp7.addProduct(s1);
 		
@@ -91,7 +92,7 @@ public class OnlineDelivery {
 		myOrder3.addMenu(sp1);
 		myOrder3.update(myOrder3);
 		
-		//System.out.print(myOrder1.toString());
+		System.out.print(myOrder3.toString());
 		//System.out.print(myOrder2.toString());
 	}
 		
